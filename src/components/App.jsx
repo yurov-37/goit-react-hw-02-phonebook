@@ -57,12 +57,18 @@ export class App extends Component {
         <MainTitle>Phonebook</MainTitle>
         <ContactForm onSubmit={this.addContact} />
         <ContactTitle>Contacts</ContactTitle>
-        <TotalContactText>Total contacts: {contacts.length}</TotalContactText>
-        <Filter value={filter} onChange={this.contactFilter} />
-        <ContactList
-          contacts={filteredContacts}
-          onDeleteContact={this.deleteContact}
-        />
+        {contacts.length > 0 && (
+          <>
+            <TotalContactText>
+              Total contacts: {contacts.length}
+            </TotalContactText>
+            <Filter value={filter} onChange={this.contactFilter} />
+            <ContactList
+              contacts={filteredContacts}
+              onDeleteContact={this.deleteContact}
+            />
+          </>
+        )}
         <GlobalStyles />
       </Phonebook>
     );
