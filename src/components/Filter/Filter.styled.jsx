@@ -1,13 +1,6 @@
 import styled from '@emotion/styled';
 
-export const Form = styled.form`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-`;
-
-export const FormLabel = styled.label`
+export const FilterLabel = styled.label`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +9,7 @@ export const FormLabel = styled.label`
   margin-bottom: 12px;
 `;
 
-export const FormInput = styled.input`
+export const FilterInput = styled.input`
   display: block;
   outline: none;
   font-family: inherit;

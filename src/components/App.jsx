@@ -4,16 +4,16 @@ import GlobalStyles from './GlobalStyles';
 import ContactForm from './ContactForm/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
-import { Phonebook, MainTitle } from './App.styled';
+import {
+  Phonebook,
+  MainTitle,
+  ContactTitle,
+  TotalContactText,
+} from './App.styled';
 
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
 
@@ -56,8 +56,8 @@ export class App extends Component {
       <Phonebook>
         <MainTitle>Phonebook</MainTitle>
         <ContactForm onSubmit={this.addContact} />
-        <h2>Contacts</h2>
-        <p>Total contacts: {contacts.length}</p>
+        <ContactTitle>Contacts</ContactTitle>
+        <TotalContactText>Total contacts: {contacts.length}</TotalContactText>
         <Filter value={filter} onChange={this.contactFilter} />
         <ContactList
           contacts={filteredContacts}
